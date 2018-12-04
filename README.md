@@ -1,5 +1,5 @@
 
-# Tree Ensembles and Random Forests
+# Tree Ensembles and Random Forests - Lab
 
 ## Introduction
 
@@ -226,6 +226,6 @@ rf_tree_2 = None
 
 We can see by comparing the two plots that the two trees we examined from our Random Forest look at different attributes, and have wildly different importances for them!
 
-# Conclusion
+## Summary
 
 In this lab, we got some practice creating a few different Tree Ensemble Methods. We also learned how to visualize feature importances, and compared individual trees from a Random Forest to see if we could notice the differences in the features they were trained on. 
