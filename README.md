@@ -1,5 +1,5 @@
 
-# Tree Ensembles and Random Forests
+# Tree Ensembles and Random Forests - Lab
 
 ## Introduction
 
@@ -434,7 +434,7 @@ plot_feature_importances(tree_clf)
 ```
 
 
-![png](output_22_0.png)
+![png](index_files/index_22_0.png)
 
 
 ### 2.3 Model performance
@@ -465,7 +465,7 @@ print(classification_report(target_test, pred))
        macro avg       0.77      0.70      0.72      8141
     weighted avg       0.81      0.82      0.81      8141
     
-    
+
 
 Now, let's check the model's accuracy. Run the cell below to display the test set accuracy of the model. 
 
@@ -475,7 +475,7 @@ print("Testing Accuracy for Decision Tree Classifier: {:.4}%".format(accuracy_sc
 ```
 
     Testing Accuracy for Decision Tree Classifier: 82.04%
-    
+
 
 ## 3. Bagged trees
 
@@ -601,7 +601,7 @@ plot_feature_importances(forest)
 ```
 
 
-![png](output_44_0.png)
+![png](index_files/index_44_0.png)
 
 
 Note: "relationship" represents what this individual is relative to others. For example an
@@ -655,7 +655,7 @@ plot_feature_importances(rf_tree_1)
 ```
 
 
-![png](output_53_0.png)
+![png](index_files/index_53_0.png)
 
 
 Now, grab the second tree and store it in `rf_tree_2`, and then pass it to `plot_feature_importances` in the following cell so we can compare which features were most useful to each. 
@@ -671,11 +671,11 @@ plot_feature_importances(rf_tree_2)
 ```
 
 
-![png](output_56_0.png)
+![png](index_files/index_56_0.png)
 
 
 We can see by comparing the two plots that the two trees we examined from our Random Forest look at different attributes, and have wildly different importances for them!
 
-# Conclusion
+## Summary 
 
 In this lab, we got some practice creating a few different Tree Ensemble Methods. We also learned how to visualize feature importances, and compared individual trees from a Random Forest to see if we could notice the differences in the features they were trained on. 
