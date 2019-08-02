@@ -72,6 +72,11 @@ Next, we'll want to confirm that the Age column is currently encoded in a numeri
 
 In the cell below, check the `.dtypes` of the DataFrame to examine the data type of each column. 
 
+
+```python
+# Your code here
+```
+
 Great.  Now we're ready to create some dummy columns and deal with our categorical variables.  
 
 In the cell below, use pandas to create dummy columns for each of categorical variables.  If you're unsure of how to do this, check out the [documentation](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html).  
@@ -105,6 +110,11 @@ tree_clf = None
 ### 2.1 Feature importance
 
 Let's quickly examine how important each feature ended up being in our Decision Tree model.  Check the `feature_importances_` attribute of our trained model to see what it displays. 
+
+
+```python
+# Your code here
+```
 
 That matrix isn't very helpful, but a visualization of the data it contains could be.  Run the cell below to plot a visualization of the feature importances for this model. Run the cell below to create a visualization of the data stored inside of a model's `.feature_importances_` attribute.
 
@@ -157,11 +167,26 @@ bagged_tree = None
 
 Great! Now, fit it to our training data. 
 
+
+```python
+# Your code here
+```
+
 Checking the accuracy of a model is such a common task that all (supervised learning) models contain a `score()` method that wraps the `accuracy_score` helper method we've been using.  All we have to do is pass it a dataset and the corresponding labels and it will return the accuracy score for those data/labels.  
 
 Let's use it to get the training accuracy of our model. In the cell below, call the `.score()` method on our Bagging model and pass in our training data and training labels as parameters. 
 
+
+```python
+# Your code here
+```
+
 Now, let's check the accuracy score that really matters--our testing accuracy.  This time, pass in our testing data and labels to see how the model did.  
+
+
+```python
+# Your code here
+```
 
 ## 4. Random forests
 
@@ -177,6 +202,16 @@ forest = None
 ```
 
 Now, let's check the training and testing accuracy of the model using its `.score()` method.
+
+
+```python
+# Your code here
+```
+
+
+```python
+# Your code here
+```
 
 ### 4.2 Look at the feature importances
 
@@ -213,15 +248,25 @@ In the cell below, get the first tree from `forest_2.estimators_` and store it i
 rf_tree_1 = None
 ```
 
-Now, we can reuse ourn `plot_feature_importances` function to visualize which features this tree was given to use duing subspace sampling. 
+Now, we can reuse our `plot_feature_importances` function to visualize which features this tree was given to use duing subspace sampling. 
 
 In the cell below, call `plot_feature_importances` on `rf_tree_1`.
+
+
+```python
+# Your code here
+```
 
 Now, grab the second tree and store it in `rf_tree_2`, and then pass it to `plot_feature_importances` in the following cell so we can compare which features were most useful to each. 
 
 
 ```python
 rf_tree_2 = None
+```
+
+
+```python
+# Your code here
 ```
 
 We can see by comparing the two plots that the two trees we examined from our Random Forest look at different attributes, and have wildly different importances for them!
