@@ -188,7 +188,7 @@ In the cell below, check the `.dtypes` of the DataFrame to examine the data type
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -437,11 +437,11 @@ tree_clf.fit(data_train, target_train)
 
 
     DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=5,
-                max_features=None, max_leaf_nodes=None,
-                min_impurity_decrease=0.0, min_impurity_split=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, presort=False, random_state=None,
-                splitter='best')
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_impurity_split=None,
+                           min_samples_leaf=1, min_samples_split=2,
+                           min_weight_fraction_leaf=0.0, presort=False,
+                           random_state=None, splitter='best')
 
 
 
@@ -451,7 +451,7 @@ Let's quickly examine how important each feature ended up being in our Decision 
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -539,7 +539,7 @@ print(classification_report(target_test, pred))
            <=50K       0.84      0.93      0.89      6165
             >50K       0.69      0.46      0.56      1976
     
-       micro avg       0.82      0.82      0.82      8141
+        accuracy                           0.82      8141
        macro avg       0.77      0.70      0.72      8141
     weighted avg       0.81      0.82      0.81      8141
     
@@ -582,7 +582,7 @@ Great! Now, fit it to our training data.
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -594,15 +594,23 @@ bagged_tree.fit(data_train, target_train)
 
 
 
-    BaggingClassifier(base_estimator=DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=5,
-                max_features=None, max_leaf_nodes=None,
-                min_impurity_decrease=0.0, min_impurity_split=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, presort=False, random_state=None,
-                splitter='best'),
-             bootstrap=True, bootstrap_features=False, max_features=1.0,
-             max_samples=1.0, n_estimators=20, n_jobs=None, oob_score=False,
-             random_state=None, verbose=0, warm_start=False)
+    BaggingClassifier(base_estimator=DecisionTreeClassifier(class_weight=None,
+                                                            criterion='gini',
+                                                            max_depth=5,
+                                                            max_features=None,
+                                                            max_leaf_nodes=None,
+                                                            min_impurity_decrease=0.0,
+                                                            min_impurity_split=None,
+                                                            min_samples_leaf=1,
+                                                            min_samples_split=2,
+                                                            min_weight_fraction_leaf=0.0,
+                                                            presort=False,
+                                                            random_state=None,
+                                                            splitter='best'),
+                      bootstrap=True, bootstrap_features=False, max_features=1.0,
+                      max_samples=1.0, n_estimators=20, n_jobs=None,
+                      oob_score=False, random_state=None, verbose=0,
+                      warm_start=False)
 
 
 
@@ -612,7 +620,7 @@ Let's use it to get the training accuracy of our model. In the cell below, call 
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -632,7 +640,7 @@ Now, let's check the accuracy score that really matters--our testing accuracy.  
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -672,12 +680,12 @@ forest.fit(data_train, target_train)
 
 
     RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
-                max_depth=5, max_features='auto', max_leaf_nodes=None,
-                min_impurity_decrease=0.0, min_impurity_split=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=None,
-                oob_score=False, random_state=None, verbose=0,
-                warm_start=False)
+                           max_depth=5, max_features='auto', max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_impurity_split=None,
+                           min_samples_leaf=1, min_samples_split=2,
+                           min_weight_fraction_leaf=0.0, n_estimators=100,
+                           n_jobs=None, oob_score=False, random_state=None,
+                           verbose=0, warm_start=False)
 
 
 
@@ -685,7 +693,7 @@ Now, let's check the training and testing accuracy of the model using its `.scor
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -703,7 +711,7 @@ forest.score(data_train, target_train)
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -764,12 +772,12 @@ forest_2.fit(data_train, target_train)
 
 
     RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
-                max_depth=2, max_features=10, max_leaf_nodes=None,
-                min_impurity_decrease=0.0, min_impurity_split=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, n_estimators=5, n_jobs=None,
-                oob_score=False, random_state=None, verbose=0,
-                warm_start=False)
+                           max_depth=2, max_features=10, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_impurity_split=None,
+                           min_samples_leaf=1, min_samples_split=2,
+                           min_weight_fraction_leaf=0.0, n_estimators=5,
+                           n_jobs=None, oob_score=False, random_state=None,
+                           verbose=0, warm_start=False)
 
 
 
@@ -790,13 +798,13 @@ rf_tree_1 = None
 rf_tree_1 = forest_2.estimators_[0]
 ```
 
-Now, we can reuse ourn `plot_feature_importances` function to visualize which features this tree was given to use duing subspace sampling. 
+Now, we can reuse our `plot_feature_importances` function to visualize which features this tree was given to use duing subspace sampling. 
 
 In the cell below, call `plot_feature_importances` on `rf_tree_1`.
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -824,7 +832,7 @@ rf_tree_2 = forest_2.estimators_[1]
 
 
 ```python
-
+# Your code here
 ```
 
 
